@@ -10,6 +10,8 @@ Bucky addon sends the details of s3 bucket name discovered from a user visited w
 It uses [AWS PHP SDK](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_installation.html) to discover misconfiguration.
 Users can also check for S3 bucket misconfiguration manually. All the results from automatic and manuall check are populated to dashboard.
 
+Checkout video https://vimeo.com/444442588
+
 # Installation
 
 ```
