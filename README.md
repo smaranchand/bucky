@@ -18,18 +18,18 @@ cd bucky
 
 ```
 
-Prerequisites: AWS Key Pairs and PHP installation 
+Requirements: AWS Access Keys and PHP installation 
 
 Get AWS Access Keys: https://console.aws.amazon.com/iam/home?#/security_credentials
 
-PHP installation: Install according to your OS,  apt install php7/ brew install php
+PHP installation: Install according to your OS,  apt install php7 / brew install php
 
 
 Currently, Bucky addon is not published in the Firefox addon store; as soon as the addon will be published, the addon link will be provided.
 
 For now, users can  manually load the addon into the browser to do so 
 
-1. Go to Firefox and visit  about:debugging
+1. Open Firefox browser and visit about:debugging
 2. Click on "This Firefox" > Load Temporary Add-on
 3. Select the addon  located at bucky/addon/bucky.js
 
@@ -53,4 +53,30 @@ The backend engine runs on http://127.0.0.1:13337
 Browse websites, Bucky will discover S3 buckets automatically and will be reflected in the dashboard.
 Visit the above address to access Bucky dashboard.
 ```
+
+# Screenshots
+Running Bucky
+
+![run_bucky](https://github.com/smaranchand/bucky/blob/master/scr/run_bucky.png?raw=true)
+
+Loading Addon
+
+![load_addon](https://github.com/smaranchand/bucky/blob/master/scr/bucky_addon.png?raw=true)
+User Interface
+
+![dashboard](https://github.com/smaranchand/bucky/blob/master/scr/dashboard_loading.png?raw=true)
+
+All Buckets
+
+![all_buckets](https://github.com/smaranchand/bucky/blob/master/scr/all_buckets.png?raw=true)
+Manual Check
+
+![manual_check](https://github.com/smaranchand/bucky/blob/master/scr/manual_check.png?raw=true)
+
+
+# Note
+Bucky is not a perfect tool to discover S3 buckets, it is well known that Bucky lacks many feautres and it  may fail to detect the misconfiguration sometimes. Certain changes and  development are in pipeline. I really appreciate the user feedbacks and contribution.
+
+
+
 
