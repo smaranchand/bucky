@@ -82,7 +82,7 @@ POC By Bucky
 
 
 # Note
-Bucky is not a perfect tool to discover S3 buckets, it is well known that Bucky lacks many feautres and it  may fail to detect the misconfiguration sometimes. Certain changes and  development are in pipeline. I really appreciate the user feedbacks and contribution.
+Bucky is not a perfect tool to discover S3 buckets, it is well known that Bucky lacks many feautres and it  may fail to detect the misconfiguration sometimes. Certain changes and  development are in pipeline. I really appreciate the feedbacks and contribution.
 
 
 
