@@ -2,7 +2,7 @@
 ![Bucky](https://github.com/smaranchand/bucky/blob/master/bucky.gif?raw=true)
 
 # Bucky
-Bucky is an automatic tool designed to discover S3 bucket misconfiguration, Bucky consists up of two parts Bucky firefox addon and Bucky backend engine. Bucky addon reads the source code of the webpages and uses Regular Expression(Regex) to match the S3 bucket used as Content Delivery Network(CDN)  and sends it to the Bucky Backend engine. The backend engine receives the data from addon and checks if the S3 bucket is publicly writeable or not.
+Bucky is an automatic tool designed to discover S3 bucket misconfiguration, Bucky consists up of two modules Bucky firefox addon and Bucky backend engine. Bucky addon reads the source code of the webpages and uses Regular Expression(Regex) to match the S3 bucket used as Content Delivery Network(CDN)  and sends it to the Bucky Backend engine. The backend engine receives the data from addon and checks if the S3 bucket is publicly writeable or not.
 
 
 # Working
