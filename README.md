@@ -24,7 +24,7 @@ Requirements: AWS Access Keys and PHP installation
 
 Get AWS Access Keys: https://console.aws.amazon.com/iam/home?#/security_credentials
 
-PHP installation: Install according to your OS,  apt install php7 / brew install php
+PHP installation: Install according to your OS,  apt install php7.3 / brew install php7.3
 
 
 Currently, Bucky addon is not published in the Firefox addon store; as soon as the addon will be published, the addon link will be provided.
