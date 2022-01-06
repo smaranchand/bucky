@@ -2,7 +2,7 @@
 #Bucky is AWS S3 bucket discovery tool developed by  https://twitter.com/smaranchand
 #Bucky Backend Engine automatically  takes input from Bucky addon and check for misconfiguration.
 #Download Bucky aaddon from https://addons.mozilla.org/en-US/firefox/addon/bucky/
-
+#No changes done.
 echo "
   ____             _                  __   ___  
  |  _ \           | |                /_ | / _ \ 
