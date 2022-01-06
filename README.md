@@ -1,6 +1,8 @@
 
 ![Bucky](https://github.com/smaranchand/bucky/blob/master/bucky.gif?raw=true)
 
+# Project is on temporary hold.
+
 # Bucky
 Bucky is an automatic tool designed to discover S3 bucket misconfiguration, Bucky consists up of two modules Bucky firefox addon and Bucky backend engine. Bucky addon reads the source code of the webpages and uses Regular Expression(Regex) to match the S3 bucket used as Content Delivery Network(CDN)  and sends it to the Bucky Backend engine. The backend engine receives the data from addon and checks if the S3 bucket is publicly writeable or not. Bucky automatically uploads a text file as Proof Of Concept(PoC) if the bucket is vulnerable.
 
@@ -20,7 +22,7 @@ cd bucky
 
 ```
 
-Requirements: AWS Access Keys and PHP installation 
+Requirements: AWS Access Keys and PHP installation
 
 Get AWS Access Keys: https://console.aws.amazon.com/iam/home?#/security_credentials
 
@@ -29,7 +31,7 @@ PHP installation: Install according to your OS,  apt install php7.3 / brew insta
 
 Currently, Bucky addon is not published in the Firefox addon store; as soon as the addon will be published, the addon link will be provided.
 
-For now, users can  manually load the addon into the browser to do so 
+For now, users can  manually load the addon into the browser to do so
 
 1. Open Firefox browser and visit about:debugging
 2. Click on "This Firefox" > Load Temporary Add-on
@@ -38,7 +40,7 @@ For now, users can  manually load the addon into the browser to do so
 Add AWS Access keys:
 ```
 cd bucky/
-nano config.inc.php 
+nano config.inc.php
 Add your AWS Access Key ID and Secret Access Key. (On-Line 57 and 61)
 ```
 
@@ -75,7 +77,7 @@ Manual Check
 
 ![manual_check](https://github.com/smaranchand/bucky/blob/master/scr/manual_check.png?raw=true)
 
-POC By Bucky 
+POC By Bucky
 
 ![Bucky_POC](https://github.com/smaranchand/bucky/blob/master/scr/vulnerable_poc.png?raw=true)
 
