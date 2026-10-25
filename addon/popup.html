@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bucky</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; width: 290px; margin: 0; padding: 16px; background: #fff; color: #333; }
+  h1 { font-size: 15px; margin: 0 0 12px; color: #0dbce7; }
+  .row { font-size: 12px; margin-bottom: 10px; }
+  .row .label { color: #888; display: block; margin-bottom: 3px; }
+  .row .value { word-break: break-all; font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
+  .ok { background: #eafaf1; color: #27ae60; }
+  .bad { background: #fdecea; color: #e74c3c; }
+  .warn { background: #fef5e7; color: #f39c12; }
+  button { width: 100%; margin-top: 6px; background: #0dbce7; color: #fff; border: 0; border-radius: 5px; padding: 9px; font-size: 13px; cursor: pointer; }
+  button:hover { background: #0aa8cf; }
+  #dashboard { background: #eef2f5; color: #555; }
+  #dashboard:hover { background: #e4e9ed; }
+  .note { font-size: 11px; color: #999; margin-top: 10px; line-height: 1.45; }
+</style>
+</head>
+<body>
+  <h1>Bucky</h1>
+
+  <div class="row">
+    <span class="label">Backend</span>
+    <span class="value" id="endpoint">—</span>
+  </div>
+
+  <div class="row">
+    <span class="label">Status</span>
+    <span id="state" class="pill">checking…</span>
+  </div>
+
+  <button id="edit">Edit settings</button>
+  <button id="dashboard">Open dashboard</button>
+
+  <div class="note" id="note"></div>
+
+<script src="endpoint.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

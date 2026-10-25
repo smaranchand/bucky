@@ -1,24 +1,38 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Bucky",
-  "version": "1.0",
-
-
-  "description": "Bucky discovers AWS S3 buckets from the web pages and sends it to the backend engine to check for misconfiguration.",
-
+  "version": "3.0",
+  "description": "Passively discovers AWS S3 buckets while you browse and checks them for misconfiguration.",
   "icons": {
     "48": "bucky.png"
   },
-
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["bucky.js"]
+      "js": ["extract.js", "bucky.js"]
     }
   ],
-
-  "permissions": [
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "bucky.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "permissions": ["storage", "webRequest"],
+  "host_permissions": [
     "http://127.0.0.1/*",
-    "webRequest"
+    "http://localhost/*",
+    "*://*.amazonaws.com/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ]
 }

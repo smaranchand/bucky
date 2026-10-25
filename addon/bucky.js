@@ -1,31 +1,45 @@
-//If you think we can improve Bucky, then suggestions are welcomed.
-var sourcecode = document.documentElement.outerHTML;
-var pageurl= document.URL;
-var hostname= window.location.hostname;
-var s3bucketurl= sourcecode.match(/https:\/\/[a-z0-9-.]{3,63}\.s3\.([a-z0-9-]{5,19}\.|)amazonaws\.com/g);
-if (s3bucketurl==null)
-{
-var s3bucketname= sourcecode.match(/(?<=\/\/s3\.amazonaws.com\/)[a-z0-9-.]{3,63}(?=\/)/);
-if (s3bucketname==null)
-{
-}
-else
-sendBucket();
+// Bucky — AWS S3 bucket discovery content script
+//
+// Complements the service worker's network observation: this catches buckets that are
+// *referenced* in the markup but never actually requested (preload hints, data
+// attributes, inline config blobs). The worker catches everything the page fetches,
+// including URLs that only exist inside a JS bundle.
 
-}
-else
-{
-  var s3bucketname= String(s3bucketurl[0]).match(/(?<=\/\/).*(?=\.s3)/);
-  sendBucket();
-}
+(() => {
+  const seen = new Set();
 
-function sendBucket() {
+  function report(source) {
+    for (const bucketName of extractBuckets(source)) {
+      if (seen.has(bucketName)) continue;
+      seen.add(bucketName);
 
-  var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://127.0.0.1:13337/process.php", true);
-    xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    var body = ("bucketname="+s3bucketname+"&sourceurl="+pageurl+"&hostname="+hostname);
-    xhr.send(body);
-    
-}
+      chrome.runtime.sendMessage({
+        type: "bucky:check",
+        bucketName,
+        pageUrl: document.URL,
+        hostname: window.location.hostname,
+      });
+    }
+  }
+
+  report(document.documentElement.outerHTML);
+
+  // Single-page apps insert most of their content after load, so a one-shot scan at
+  // document_idle misses it. Re-scan on mutation, coalesced so a busy page does not
+  // trigger a scan per DOM change.
+  let pending = null;
+  const observer = new MutationObserver(() => {
+    if (pending) return;
+    pending = setTimeout(() => {
+      pending = null;
+      report(document.documentElement.outerHTML);
+    }, 2000);
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["src", "href", "data-src", "srcset", "content"],
+  });
+})();
