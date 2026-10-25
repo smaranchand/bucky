@@ -169,27 +169,27 @@ for how you browse, and set `BUCKY_AUTO_WRITE=false` if it is not.
 
 Running Bucky
 
-![run_bucky](https://github.com/smaranchand/bucky/blob/master/scr/run_bucky.png?raw=true)
+![run_bucky](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/run_bucky.png?raw=true)
 
 Loading Addon
 
-![load_addon](https://github.com/smaranchand/bucky/blob/master/scr/bucky_addon.png?raw=true)
+![load_addon](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/bucky_addon.png?raw=true)
 
 Dashboard
 
-![dashboard](https://github.com/smaranchand/bucky/blob/master/scr/dashboard_loading.png?raw=true)
+![dashboard](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/dashboard_loading.png?raw=true)
 
 All Buckets
 
-![all_buckets](https://github.com/smaranchand/bucky/blob/master/scr/all_buckets.png?raw=true)
+![all_buckets](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/all_buckets.png?raw=true)
 
 Manual Check
 
-![manual_check](https://github.com/smaranchand/bucky/blob/master/scr/manual_check.png?raw=true)
+![manual_check](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/manual_check.png?raw=true)
 
 POC By Bucky
 
-![Bucky_POC](https://github.com/smaranchand/bucky/blob/master/scr/vulnerable_poc.png?raw=true)
+![Bucky_POC](https://github.com/smaranchand/bucky/blob/master/docs/screenshots/vulnerable_poc.png?raw=true)
 
 ## Note
 
